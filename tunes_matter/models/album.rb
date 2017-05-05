@@ -21,7 +21,7 @@ class Album
     @id = returned_result.first()['id'].to_i()
   end
 
-  def Artist.delete_all()
+  def Album.delete_all()
     sql = "DELETE FROM albums;"
     SqlRunner.run(sql)
   end
