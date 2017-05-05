@@ -26,5 +26,17 @@ class Album
     SqlRunner.run(sql)
   end
 
+  def artist()
+    sql = "SELECT * FROM artists WHERE id = #{@artist_id};"
+    returned_result = SqlRunner.run(sql)
+    return Artist.new(returned_result.first)
+  end
+
+  def all_editions()
+    sql = "SELECT * FROM editions WHERE title_id = #{@id};"
+    returned_result = SqlRunner.run(sql)
+    return returned_result.map {|edition| Edition.new(edition) }
+  end
+
 
 end
