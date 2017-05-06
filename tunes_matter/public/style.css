@@ -1,0 +1,32 @@
+html {
+  height: 100%;
+  display: flex;
+  /*border: 3px solid #444;
+  border-radius: 10px;*/
+}
+
+body {
+  background: linear-gradient(#444 50%, #000 50%);
+  background-size: 100% 4px;
+  background-repeat: repeat-y;
+  opacity: .80;
+  color: limegreen;
+  font-family: courier;
+
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+nav a {
+  margin: 2px 10px;
+  color: lime;
+}
+
+footer {
+  display: flex;
+  align-content: flex-end;
+}

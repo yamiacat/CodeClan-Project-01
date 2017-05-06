@@ -1,10 +1,19 @@
 <!DOCTYPE html>
 <html lang="en-GB">
-  <head>
-    <meta charset="utf-8">
-    <title>TUNES MATTER</title>
-  </head>
-  <body>
-        <%= yield %>
-  </body>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="/style.css">
+  <title>TUNES MATTER</title>
+</head>
+<body>
+  <header>
+    <nav>
+          <a href="/artists">Artists</a>
+          <a href="/albums">Albums</a>
+          <a href="/editions">Editions</a>
+    </nav>
+  </header>
+  <%= yield %>
+  <footer> <%= Shop.total_stock_levels %> </footer>
+</body>
 </html>
