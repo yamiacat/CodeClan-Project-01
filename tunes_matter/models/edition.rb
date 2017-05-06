@@ -41,6 +41,12 @@ class Edition
     return returned_result.map{|edition| Edition.new(edition)}
   end
 
+  def Edition.find(id)
+    sql = "SELECT * FROM editions WHERE id = #{id}"
+    returned_result = SqlRunner.run(sql)
+    return Edition.new(returned_result.first())
+  end
+
   def update()
     sql = "UPDATE editions SET (title_id, format, version_notes, edition_release_year, number_in_stock, supplier_price, retail_price) = (#{@title_id}, '#{@format}', '#{@version_notes}', #{@edition_release_year}, #{@number_in_stock}, #{@supplier_price}, #{@retail_price}) WHERE id = #{@id};"
     SqlRunner.run(sql)

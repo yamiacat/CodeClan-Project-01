@@ -34,6 +34,11 @@ class Artist
     return returned_result.map{|artist| Artist.new(artist)}
   end
 
+  def Artist.find(id)
+    sql = "SELECT * FROM artists WHERE id = #{id}"
+    returned_result = SqlRunner.run(sql)
+    return Artist.new(returned_result.first())
+  end
 
   def update()
     sql = "UPDATE artists SET (name) = ('#{@name}') WHERE id = #{@id};"
