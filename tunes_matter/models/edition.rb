@@ -58,5 +58,11 @@ class Edition
     return Artist.new(returned_result.first())
   end
 
+  def album
+    sql = "SELECT * FROM albums WHERE id = #{@title_id};"
+    returned_result = SqlRunner.run(sql)
+    return Album.new(returned_result.first())
+  end
+
 
 end

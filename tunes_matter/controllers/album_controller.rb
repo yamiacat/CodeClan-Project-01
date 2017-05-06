@@ -29,7 +29,7 @@ end
 #SHOW - READ (one)
 get "/albums/:id" do
   @album = Album.find(params[:id])
-  erb(:"album/show")
+  erb(:"albums/show")
 end
 
 #EDIT UPDATE (get form)
