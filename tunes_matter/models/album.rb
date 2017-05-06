@@ -29,7 +29,7 @@ class Album
   def artist()
     sql = "SELECT * FROM artists WHERE id = #{@artist_id};"
     returned_result = SqlRunner.run(sql)
-    return Artist.new(returned_result.first)
+    return Artist.new(returned_result.first())
   end
 
   def all_editions()

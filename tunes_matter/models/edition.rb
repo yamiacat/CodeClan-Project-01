@@ -29,6 +29,11 @@ class Edition
     SqlRunner.run(sql)
   end
 
+  def artist
+    sql = "SELECT * FROM artists ar INNER JOIN albums al ON ar.id = al.artist_id WHERE al.id = #{@title_id};"
+    returned_result = SqlRunner.run(sql)
+    return Artist.new(returned_result.first())
+  end
 
 
 end
