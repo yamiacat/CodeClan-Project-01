@@ -29,6 +29,18 @@ class Edition
     SqlRunner.run(sql)
   end
 
+
+  def Edition.all()
+    sql = "SELECT * FROM editions;"
+    returned_result = SqlRunner.run(sql)
+    return returned_result.map{|edition| Edition.new(edition)}
+  end
+
+  def update()
+    sql = "UPDATE editions SET (title_id, format, version_notes, edition_release_year, number_in_stock, supplier_price, retail_price) = (#{@title_id}, '#{@format}', '#{@version_notes}', #{@edition_release_year}, #{@number_in_stock}, #{@supplier_price}, #{@retail_price}) WHERE id = #{@id};"
+    SqlRunner.run(sql)
+  end
+
   def artist
     sql = "SELECT * FROM artists ar INNER JOIN albums al ON ar.id = al.artist_id WHERE al.id = #{@title_id};"
     returned_result = SqlRunner.run(sql)
