@@ -21,9 +21,13 @@ nav {
   justify-content: flex-start;
 }
 
-nav a {
+a {
   margin: 2px 10px;
   color: lime;
+}
+
+ a:hover {
+  text-shadow: 0 0 0.15em greenyellow
 }
 
 
@@ -37,11 +41,39 @@ nav a {
   flex: 1;
 }
 
+.artist-row {
+  display: inline;
+}
+
+.edit-link {
+  color:   darkorange;
+}
+
+.delete-form {
+  display: inline;
+}
+
+input.delete-link {
+  color: crimson;
+  flex-direction: row;
+  justify-content: flex-end;
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  text-decoration:underline;
+  cursor: pointer;
+}
+
+input.delete-link:hover {
+  text-shadow: 0 0 0.15em indianred;
+}
 
 footer {
   color: lime;
   text-align: center;
 }
 
-h1 {
-  text-shadow: 0 0 0.15em greenyellow}
+h1, h2 {
+  text-shadow: 0 0 0.15em greenyellow
+}

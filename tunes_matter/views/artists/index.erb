@@ -1,6 +1,10 @@
-<h1>All Artists</h1>
+<h2>All Artists</h2>
 
 <hr/>
 <% @artists.each do |artist| %>
-<p>Name: <%= artist.name() %> </p>
+<p class="artist-row">Name: <%= artist.name() %> <a class="edit-link" href="/artists/<%= artist.id%>/edit">EDIT</a> <form class="delete-form" action="/artists/<%= artist.id %>/delete" method="POST">
+  <input type="submit" class="delete-link" value="DELETE"></form> </p>
 <% end %>
+<hr/>
+<a href="/artists/new">Add New Artist</a>
+<hr/>
