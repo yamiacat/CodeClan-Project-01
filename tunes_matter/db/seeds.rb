@@ -2,6 +2,7 @@ require("pry-byebug")
 require_relative("../models/artist.rb")
 require_relative("../models/album.rb")
 require_relative("../models/edition.rb")
+require_relative("../models/shop.rb")
 
 Edition.delete_all()
 Album.delete_all()
