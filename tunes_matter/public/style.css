@@ -1,3 +1,14 @@
+@font-face {
+    font-family: 'dymaxionscriptregular';
+    src: url('DymaxionScript-webfont.eot');
+    src: url('DymaxionScript-webfont.eot?#iefix') format('embedded-opentype'),
+         url('DymaxionScript-webfont.woff') format('woff'),
+         url('DymaxionScript-webfont.ttf') format('truetype'),
+         url('DymaxionScript-webfont.svg#dymaxionscriptregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
 html {
   height: 100%;
   display: flex;
@@ -40,7 +51,7 @@ a {
   flex: 1;
 }
 
-.artist-row {
+.data-row {
   display: inline;
 }
 
@@ -75,4 +86,16 @@ footer {
 
 h1, h2 {
   text-shadow: 0 0 0.15em greenyellow
+}
+
+
+.introtitle {
+  font-family: 'dymaxionscriptregular';
+  text-align: center;
+  font-size: 4em;
+}
+
+.introtitle:hover {
+  color: aqua;
+  text-shadow: 0 0 0.3em aliceblue;
 }
