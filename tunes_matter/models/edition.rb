@@ -30,6 +30,11 @@ class Edition
   end
 
 
+  def delete()
+    sql = "DELETE FROM editions WHERE id = #{@id};"
+    SqlRunner.run(sql)
+  end
+
   def Edition.all()
     sql = "SELECT * FROM editions;"
     returned_result = SqlRunner.run(sql)
