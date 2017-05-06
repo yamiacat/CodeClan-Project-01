@@ -26,7 +26,22 @@ nav a {
   color: lime;
 }
 
-footer {
+
+.site {
   display: flex;
-  align-content: flex-end;
+  min-height: 100px;
+  flex-direction: column;
 }
+
+.site-content {
+  flex: 1;
+}
+
+
+footer {
+  color: lime;
+  text-align: center;
+}
+
+h1 {
+  text-shadow: 0 0 0.15em greenyellow}

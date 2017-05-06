@@ -5,15 +5,18 @@
   <link rel="stylesheet" href="/style.css">
   <title>TUNES MATTER</title>
 </head>
-<body>
+<body class="site">
+
   <header>
     <nav>
-          <a href="/artists">Artists</a>
-          <a href="/albums">Albums</a>
-          <a href="/editions">Editions</a>
+      <a href="/artists">Artists</a>
+      <a href="/albums">Albums</a>
+      <a href="/editions">Editions</a>
     </nav>
   </header>
-  <%= yield %>
+  <main class="site-content">
+    <%= yield %>
+  </main>
   <footer> <%= Shop.total_stock_levels %> </footer>
 </body>
 </html>
