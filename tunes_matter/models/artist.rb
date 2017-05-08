@@ -29,7 +29,7 @@ class Artist
   end
 
   def Artist.all()
-    sql = "SELECT * FROM artists;"
+    sql = "SELECT * FROM artists ORDER BY NAME ASC;"
     returned_result = SqlRunner.run(sql)
     return returned_result.map{|artist| Artist.new(artist)}
   end
@@ -46,10 +46,11 @@ class Artist
   end
 
 
-  def all_albums
+  def all_albums()
     sql = "SELECT * FROM albums WHERE artist_id = #{@id};"
     returned_result = SqlRunner.run(sql)
     return returned_result.map {|album| Album.new(album)}
   end
+
 
 end
