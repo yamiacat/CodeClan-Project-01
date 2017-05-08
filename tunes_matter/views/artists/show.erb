@@ -1,5 +1,15 @@
-<h2>Artist View</h2>
+<h1>Artist View</h1>
 
-<h3><%= @artist.name %></h3>
+<h2><%= @artist.name %></h2>
+<hr>
 
-<p>Links to other stuff, I'd imagine</p>
+<% @albums.each do |album| %>
+
+<h3 class="data-row">"<%= album.title %>" (<%= album.original_release_year %>) Genre: <%= album.genre %></h3>
+<p>Editions:</p>
+<% editions = album.all_editions %>
+<% editions.each do |edition| %>
+<p class="data-row"><%= edition.edition_release_year %> release on <%= edition.format() %>. £<%= sprintf( '%.2f', (edition.retail_price)/100) %> <%= edition.number_in_stock %> in stock</p>
+<p><%= edition.version_notes %></p>
+<% end %>
+<% end %>
