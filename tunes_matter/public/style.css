@@ -89,7 +89,7 @@ footer {
   text-align: center;
 }
 
-h1, h2 {
+h1 {
   text-shadow: 0 0 0.15em greenyellow
 }
 
@@ -104,31 +104,20 @@ hr {
   font-family: 'dymaxionscriptregular';
   text-align: center;
   font-size: 4em;
-  /*line-height: 0.5em;*/
   display: flex;
   flex-direction: column;
-  /*align-content: center;*/
   height: 100%;
   color: aqua;
   text-shadow: 0 0 0.3em aliceblue;
   justify-content: space-between;
 }
 
-/*.introtitle:hover {
-  color: orangered;
-  text-shadow: 0 0 0.3em lightcyan;
-}*/
-
 .main-banner {
-  /*align-self: flex-start;*/
   margin: 0;
-  /*vertical-align: super;*/
 }
 
 .sub-banner {
-  /*vertical-align: bottom;*/
   margin: 0;
-  /*align-self: flex-end;*/
 }
 
 .introtitle::before {
@@ -153,4 +142,14 @@ hr {
 
 .stocklevel {
   display: inline;
+}
+
+#add-album-from-artist {
+  font-size: 0.6em;
+  text-shadow: none;
+  color: limegreen;
+}
+
+#add-album-from-artist:hover {
+ text-shadow: 0 0 0.15em greenyellow
 }
