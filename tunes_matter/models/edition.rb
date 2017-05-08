@@ -36,7 +36,7 @@ class Edition
   end
 
   def Edition.all()
-    sql = "SELECT * FROM editions;"
+    sql = "SELECT * FROM editions ORDER BY number_in_stock ASC;"
     returned_result = SqlRunner.run(sql)
     return returned_result.map{|edition| Edition.new(edition)}
   end

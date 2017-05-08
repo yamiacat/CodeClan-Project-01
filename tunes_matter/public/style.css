@@ -143,9 +143,27 @@ hr {
     background-size: contain;
 }
 
-.stocklevel {
-  /*display: inline;*/
+.stocklevel0 {
+    color: lime;
+    background-color: red;
+    opacity: 0.8;
 }
+
+.stocklevel1 {
+    color: lime;
+    background-color: firebrick;
+    opacity: 0.8;
+}
+
+.stocklevel2 {
+    color: lime;
+    background-color: chocolate;
+    opacity: 0.8;
+}
+
+
+
+
 
 .link-near-heading {
   font-size: 0.6em;
