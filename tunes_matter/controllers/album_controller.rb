@@ -2,7 +2,7 @@ require("sinatra")
 require("sinatra/contrib/all")
 require_relative("../models/album.rb")
 require_relative("../models/artist.rb")
-
+require_relative("../models/edition.rb")
 
 # INDEX - READ (all)
 
@@ -29,6 +29,7 @@ end
 #SHOW - READ (one)
 get "/albums/:id" do
   @album = Album.find(params[:id])
+  @editions = @album.all_editions()
   erb(:"albums/show")
 end
 
