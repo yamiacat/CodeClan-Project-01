@@ -38,7 +38,7 @@ a {
 }
 
  .navlink:hover {
-  text-shadow: 0 0 0.15em greenyellow
+  text-shadow: 0 0 0.15em greenyellow;
 }
 
 
@@ -90,7 +90,8 @@ footer {
 }
 
 h1 {
-  text-shadow: 0 0 0.15em greenyellow
+  text-shadow: 0 0 0.15em greenyellow;
+  color: lime;
 }
 
 hr {
@@ -107,17 +108,19 @@ hr {
   display: flex;
   flex-direction: column;
   height: 100%;
-  color: aqua;
   text-shadow: 0 0 0.3em aliceblue;
   justify-content: space-between;
 }
 
 .main-banner {
   margin: 0;
+  color: aqua;
 }
 
 .sub-banner {
   margin: 0;
+  color: aqua;
+  text-shadow: 0 0 0.15em greenyellow;
 }
 
 .introtitle::before {
@@ -144,12 +147,12 @@ hr {
   display: inline;
 }
 
-#add-album-from-artist {
+.link-near-heading {
   font-size: 0.6em;
   text-shadow: none;
-  color: limegreen;
+  color: lime;
 }
 
-#add-album-from-artist:hover {
+.link-near-heading:hover {
  text-shadow: 0 0 0.15em greenyellow
 }
