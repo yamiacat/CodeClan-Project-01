@@ -9,7 +9,8 @@
 <p>Editions:</p>
 <% editions = album.all_editions %>
 <% editions.each do |edition| %>
-<p class="data-row"><%= edition.edition_release_year %> release on <%= edition.format() %>. £<%= sprintf( '%.2f', (edition.retail_price)/100) %> <%= edition.number_in_stock %> in stock</p>
-<p><%= edition.version_notes %></p>
+<p class="data-row"><%= edition.edition_release_year %> <%= edition.version_notes %> release on <%= edition.format() %> - £<%= sprintf( '%.2f', (edition.retail_price)/100) %></p><p class="stocklevel"> - <%= edition.number_in_stock %> in stock</p>
+
 <% end %>
+<hr>
 <% end %>

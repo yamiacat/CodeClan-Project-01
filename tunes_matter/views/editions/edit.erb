@@ -10,7 +10,12 @@
     <% end %>
   </select>
 
-
+  <label for="format-confirm">Confirm Format:</label>
+  <select id="format-confirm" name="format" required>
+    <option value ="">Please Confirm</option>
+    <option <%= "selected" if @edition.format == "cd" %> value ="cd">CD</option>
+    <option <%= "selected" if @edition.format == "vinyl" %> value ="vinyl">Vinyl</option>
+  </select>
 
   <label for="version-notes-field">Version Notes:</label>
   <input id="version-notes-field" name="version_notes" type="text" value="<%= @edition.version_notes %>"/>
