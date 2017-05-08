@@ -55,7 +55,7 @@ class Album
   end
 
   def all_editions()
-    sql = "SELECT * FROM editions WHERE title_id = #{@id};"
+    sql = "SELECT * FROM editions WHERE title_id = #{@id} ORDER BY edition_release_year ASC;"
     returned_result = SqlRunner.run(sql)
     return returned_result.map {|edition| Edition.new(edition) }
   end

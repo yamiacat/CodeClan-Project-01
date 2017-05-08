@@ -47,7 +47,7 @@ class Artist
 
 
   def all_albums()
-    sql = "SELECT * FROM albums WHERE artist_id = #{@id};"
+    sql = "SELECT * FROM albums WHERE artist_id = #{@id} ORDER BY original_release_year ASC;"
     returned_result = SqlRunner.run(sql)
     return returned_result.map {|album| Album.new(album)}
   end
