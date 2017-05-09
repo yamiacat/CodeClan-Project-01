@@ -65,11 +65,35 @@ album5 = Album.new({
   'original_release_year' => '1991'
   })
 
+album6 = Album.new({
+  'artist_id' => artist2.id,
+  'title' => 'Voids',
+  'genre' => 'Blackgaze',
+  'original_release_year' => '2009'
+  })
+
+album7 = Album.new({
+  'artist_id' => artist3.id,
+  'title' => 'Music Has The Right To Children',
+  'genre' => 'Electronic Ambient',
+  'original_release_year' => '1998'
+  })
+
+album8 = Album.new({
+  'artist_id' => artist3.id,
+  'title' => 'Tomorrows Harvest',
+  'genre' => 'Electronic Ambient',
+  'original_release_year' => '2013'
+  })
+
 album1.save()
 album2.save()
 album3.save()
 album4.save()
 album5.save()
+album6.save()
+album7.save()
+album8.save()
 
 edition1 = Edition.new({
   'title_id' => album1.id,
@@ -163,6 +187,67 @@ edition9 = Edition.new({
   'retail_price' => '25000'
   })
 
+edition10 = Edition.new({
+  'title_id' => album6.id,
+  'format' => 'vinyl',
+  'version_notes' => 'original pressing',
+  'edition_release_year' => '2013',
+  'number_in_stock' => '10',
+  'supplier_price' => '1200',
+  'retail_price' => '1650'
+  })
+
+edition11 = Edition.new({
+  'title_id' => album6.id,
+  'format' => 'cd',
+  'version_notes' => 'digipak edition',
+  'edition_release_year' => '2013',
+  'number_in_stock' => '8',
+  'supplier_price' => '1000',
+  'retail_price' => '1400'
+  })
+
+edition12 = Edition.new({
+  'title_id' => album6.id,
+  'format' => 'cd',
+  'version_notes' => 'jewel case edition',
+  'edition_release_year' => '2013',
+  'number_in_stock' => '9',
+  'supplier_price' => '1000',
+  'retail_price' => '1400'
+  })
+
+edition13 = Edition.new({
+  'title_id' => album7.id,
+  'format' => 'vinyl',
+  'version_notes' => 'original pressing',
+  'edition_release_year' => '1998',
+  'number_in_stock' => '11',
+  'supplier_price' => '1200',
+  'retail_price' => '2650'
+  })
+
+edition14 = Edition.new({
+  'title_id' => album8.id,
+  'format' => 'cd',
+  'version_notes' => 'digipak edition with bonus tracks',
+  'edition_release_year' => '2016',
+  'number_in_stock' => '4',
+  'supplier_price' => '1000',
+  'retail_price' => '1400'
+  })
+
+edition15 = Edition.new({
+  'title_id' => album8.id,
+  'format' => 'vinyl',
+  'version_notes' => 'red and cream picture disc',
+  'edition_release_year' => '2013',
+  'number_in_stock' => '2',
+  'supplier_price' => '1900',
+  'retail_price' => '2400'
+  })
+
+
 edition1.save()
 edition2.save()
 edition3.save()
@@ -172,7 +257,12 @@ edition6.save()
 edition7.save()
 edition8.save()
 edition9.save()
-
+edition10.save()
+edition11.save()
+edition12.save()
+edition13.save()
+edition14.save()
+edition15.save()
 
 binding.pry
 nil

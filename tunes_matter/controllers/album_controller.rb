@@ -7,7 +7,7 @@ require_relative("../models/edition.rb")
 # INDEX - READ (all)
 
 get "/albums" do
-  @album = Album.all()
+  @albums = Album.all()
   erb (:"albums/index")
 end
 

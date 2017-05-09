@@ -14,5 +14,8 @@ class Shop
   end
 
 
+  # def Shop.search
+  #
+  # end
 
 end

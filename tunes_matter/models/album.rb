@@ -60,5 +60,11 @@ class Album
     return returned_result.map {|edition| Edition.new(edition) }
   end
 
+  def Album.title_search(search_string)
+    sql = "SELECT * FROM albums WHERE title LIKE '%#{search_string}%';"
+    returned_result = SqlRunner.run(sql)
+    return returned_result.map{|album| Album.new(album)}
+  end
+
 
 end
