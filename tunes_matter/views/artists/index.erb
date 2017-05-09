@@ -4,8 +4,6 @@
 
 <% @artists.each do |artist| %>
 
-<p class="data-row"><%= artist.name() %> <a class="navlink" href="/artists/<%=artist.id%>"><%= artist.all_albums.count %> Album<%="s" if artist.all_albums.count != 1 %></a> <a class="edit-link" href="/artists/<%= artist.id%>/edit">EDIT</a> <form class="delete-form" action="/artists/<%= artist.id %>/delete" method="POST">
-  <input type="submit" class="delete-link" value="DELETE"></form> </p>
+<p class="data-row"><%= artist.name() %> <a class="navlink" href="/artists/<%=artist.id%>"><%= artist.all_albums.count %> Album<%="s" if artist.all_albums.count != 1 %></a> <a class="edit-link" href="/artists/<%= artist.id%>/edit">EDIT</a> <a class="delete-link" href="/artists/<%=artist.id%>/warn-delete">DELETE</a>
+  <hr/>
 <% end %>
-
-<hr/>

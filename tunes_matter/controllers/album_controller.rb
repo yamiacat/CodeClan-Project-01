@@ -53,6 +53,11 @@ end
 
 post "/albums/:id/delete" do
   @album = Album.find(params[:id])
-  @album.delete()
-  erb(:"albums/destroy")
+  if 0 == @album.all_editions.count()
+    @album.delete()
+    erb(:"albums/destroy")
+  else
+    @editions = @album.all_editions()
+    erb(:"albums/not-delete")
+  end
 end

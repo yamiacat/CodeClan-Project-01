@@ -1,0 +1,20 @@
+<h1>Artist Deletion Warning!</h1>
+
+<h2 class="viewheading">All of the below information about <%= @artist.name() %> will be deleted from the database!</h2>
+
+<hr>
+<% @albums.each do |album| %>
+
+<h3 class="data-row">"<%= album.title %>" (<%= album.original_release_year %>) Genre: <%= album.genre %></h3>
+<p>Editions:</p>
+<% editions = album.all_editions %>
+<% editions.each do |edition| %>
+<p class="data-row"><%= edition.edition_release_year %> <%= edition.version_notes %> release on <%= edition.format() %> - £<%= sprintf( '%.2f', (edition.retail_price)/100) %></p>
+
+<p class="stocklevel"> - <%= edition.number_in_stock %> in stock </p>
+<% end %>
+<hr>
+<% end %>
+
+<form class="delete-form" action="/artists/<%= @artist.id %>/delete" method="POST">
+  <input type="submit" class="delete-link" value="CONFIRM DELETION"></form>

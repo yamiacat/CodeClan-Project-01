@@ -47,10 +47,18 @@ post "/artists/:id" do
   erb(:"artists/update")
 end
 
+#WARN DELETE
+
+get "/artists/:id/warn-delete" do
+  @artist = Artist.find(params[:id])
+  @albums = @artist.all_albums()
+  erb(:"artists/warn-delete")
+end
+
 #DESTROY DELETE
 
 post "/artists/:id/delete" do
   @artist = Artist.find(params[:id])
-  @artist.delete()
-  erb(:"artists/destroy")
+    @artist.delete()
+    erb(:"artists/destroy")
 end
