@@ -10,8 +10,8 @@ class Edition
   def initialize(params)
     @id = params['id'].to_i()
     @title_id = params['title_id'].to_i()
-    @format = params['format']
-    @version_notes = params['version_notes']
+    @format = params['format'].downcase
+    @version_notes = params['version_notes'].downcase
     @edition_release_year = params['edition_release_year'].to_i()
     @number_in_stock = params['number_in_stock'].to_i()
     @supplier_price = params['supplier_price'].to_i()

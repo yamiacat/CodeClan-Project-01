@@ -10,8 +10,8 @@ class Album
   def initialize(params)
     @id = params['id'].to_i()
     @artist_id = params['artist_id'].to_i()
-    @title = params['title']
-    @genre = params['genre']
+    @title = params['title'].downcase
+    @genre = params['genre'].downcase
     @original_release_year = params['original_release_year'].to_i()
   end
 

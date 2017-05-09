@@ -9,7 +9,7 @@ class Artist
 
   def initialize(params)
     @id = params['id'].to_i()
-    @name = params['name']
+    @name = params['name'].downcase
   end
 
   def save()
