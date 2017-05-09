@@ -9,6 +9,7 @@
     font-style: normal;
 }
 
+
 html {
   height: 100%;
   display: flex;
@@ -82,6 +83,21 @@ input.delete-link {
   font-size: 1.5em;
 }
 
+input.update-field {
+  /*display: inline;
+  flex-direction: row;
+  justify-content: flex-end;*/
+  background: none;
+  /*border: solid 2px green;*/
+  border-radius: 5px;
+  /*padding: 1px 5px;*/
+  box-shadow: 0px 5px 2px 5px green inset;
+
+  font: inherit;
+  color: lime;
+}
+
+
 .delete-link {
   color: crimson;
 
@@ -150,19 +166,19 @@ hr {
     background-size: contain;
 }
 
-.stocklevel0 {
+.collectible.stocklevel0 {
     color: lime;
     background-color: red;
     opacity: 0.8;
 }
 
-.stocklevel1 {
+.collectible.stocklevel1 {
     color: lime;
     background-color: firebrick;
     opacity: 0.8;
 }
 
-.stocklevel2 {
+.collectible.stocklevel2 {
     color: lime;
     background-color: chocolate;
     opacity: 0.8;

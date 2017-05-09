@@ -5,7 +5,7 @@
 
 <p class="data-row">"<%= @edition.album.title() %>" by <%= @edition.artist.name() %>  (<%= @edition.album.original_release_year %>): <%= @edition.edition_release_year %> edition on <%= @edition.format %> Supplier Price: £<%= sprintf( '%.2f', (@edition.supplier_price)/100) %> - Retail Price: £<%= sprintf( '%.2f', (@edition.retail_price)/100) %></p>
 
-<p class="stocklevel"> - <%= @edition.number_in_stock %> in stock</p>
+<p class="stocklevel">Collectible? (<%= @edition.collectible %>) - <%= @edition.number_in_stock %> in stock</p>
 <hr>
 
 <form class="delete-form" action="/editions/<%= @edition.id %>/delete" method="POST">

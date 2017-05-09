@@ -20,6 +20,7 @@ CREATE TABLE editions (
   title_id INT8 REFERENCES albums(id) ON DELETE CASCADE,
   format VARCHAR(255),
   version_notes VARCHAR(255),
+  collectible VARCHAR(255),
   edition_release_year INT4,
   number_in_stock INT4,
   supplier_price INT4,

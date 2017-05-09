@@ -11,7 +11,7 @@
 <% editions.each do |edition| %>
 <p class="data-row"><%= edition.edition_release_year %> <%= edition.version_notes %> release on <%= edition.format() %> - £<%= sprintf( '%.2f', (edition.retail_price)/100) %></p>
 
-<p class="stocklevel"> - <%= edition.number_in_stock %> in stock </p>
+<p class="stocklevel">Collectible? (<%= edition.collectible %>) - <%= edition.number_in_stock %> in stock </p>
 <% end %>
 <hr>
 <% end %>

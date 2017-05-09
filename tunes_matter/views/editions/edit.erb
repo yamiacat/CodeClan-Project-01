@@ -17,6 +17,13 @@
     <option <%= "selected" if @edition.format == "vinyl" %> value ="vinyl">Vinyl</option>
   </select>
 
+  <label for="collectible-confirm">Collectible Edition?</label>
+  <select id="collectible-confirm" name="collectible" required>
+    <option value ="">Please Select</option>
+    <option <%= "selected" if @edition.collectible == "y" %> value ="y">Yes</option>
+    <option <%= "selected" if @edition.collectible == "n" %> value ="n">No</option>
+  </select>
+
   <label for="version-notes-field">Version Notes:</label>
   <input id="version-notes-field" name="version_notes" type="text" value="<%= @edition.version_notes %>"/>
 

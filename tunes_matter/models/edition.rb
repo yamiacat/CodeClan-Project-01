@@ -5,13 +5,14 @@ require_relative("./artist.rb")
 class Edition
 
   attr_reader :id
-  attr_accessor :title_id, :format, :version_notes, :edition_release_year, :number_in_stock, :supplier_price, :retail_price
+  attr_accessor :title_id, :format, :version_notes, :collectible, :edition_release_year, :number_in_stock, :supplier_price, :retail_price
 
   def initialize(params)
     @id = params['id'].to_i()
     @title_id = params['title_id'].to_i()
     @format = params['format'].downcase
     @version_notes = params['version_notes'].downcase
+    @collectible = params['collectible'].downcase
     @edition_release_year = params['edition_release_year'].to_i()
     @number_in_stock = params['number_in_stock'].to_i()
     @supplier_price = params['supplier_price'].to_i()
@@ -19,7 +20,7 @@ class Edition
   end
 
   def save()
-    sql = "INSERT INTO editions (title_id, format, version_notes, edition_release_year, number_in_stock, supplier_price, retail_price) VALUES (#{@title_id}, '#{@format}', '#{@version_notes}', #{@edition_release_year}, #{@number_in_stock}, #{@supplier_price}, #{@retail_price}) RETURNING id;"
+    sql = "INSERT INTO editions (title_id, format, version_notes, collectible, edition_release_year, number_in_stock, supplier_price, retail_price) VALUES (#{@title_id}, '#{@format}', '#{@version_notes}', '#{@collectible}', #{@edition_release_year}, #{@number_in_stock}, #{@supplier_price}, #{@retail_price}) RETURNING id;"
     returned_result = SqlRunner.run(sql)
     @id = returned_result.first()['id'].to_i()
   end
@@ -36,7 +37,7 @@ class Edition
   end
 
   def Edition.all()
-    sql = "SELECT * FROM editions ORDER BY number_in_stock ASC;"
+    sql = "SELECT * FROM editions ORDER BY collectible, number_in_stock ASC;"
     returned_result = SqlRunner.run(sql)
     return returned_result.map{|edition| Edition.new(edition)}
   end
@@ -48,7 +49,7 @@ class Edition
   end
 
   def update()
-    sql = "UPDATE editions SET (title_id, format, version_notes, edition_release_year, number_in_stock, supplier_price, retail_price) = (#{@title_id}, '#{@format}', '#{@version_notes}', #{@edition_release_year}, #{@number_in_stock}, #{@supplier_price}, #{@retail_price}) WHERE id = #{@id};"
+    sql = "UPDATE editions SET (title_id, format, version_notes, collectible, edition_release_year, number_in_stock, supplier_price, retail_price) = (#{@title_id}, '#{@format}', '#{@version_notes}', '#{@collectible}', #{@edition_release_year}, #{@number_in_stock}, #{@supplier_price}, #{@retail_price}) WHERE id = #{@id};"
     SqlRunner.run(sql)
   end
 
