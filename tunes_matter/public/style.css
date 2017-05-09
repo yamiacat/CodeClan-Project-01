@@ -54,6 +54,7 @@ a {
 
 .data-row {
   display: inline;
+  text-transform: capitalize;
 }
 
 .edit-link {

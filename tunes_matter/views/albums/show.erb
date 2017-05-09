@@ -1,6 +1,6 @@
 <h1>Album View</h1>
 
-<h2>"<%= @album.title %>" by <%= @album.artist.name %><a class="link-near-heading" href="/editions/new">Add New Edition</a></h2>
+<h2 class="viewheading">"<%= @album.title %>" by <%= @album.artist.name %><a class="link-near-heading" href="/editions/new">Add New Edition</a></h2>
 <hr>
 
 <% @editions.each do |edition| %>
