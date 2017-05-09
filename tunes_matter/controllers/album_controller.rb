@@ -49,15 +49,19 @@ post "/albums/:id" do
   erb(:"albums/update")
 end
 
+
+#WARN DELETE
+
+get "/albums/:id/warn-delete" do
+  @album = Album.find(params[:id])
+  @editions = @album.all_editions()
+  erb(:"albums/warn-delete")
+end
+
 #DESTROY DELETE
 
 post "/albums/:id/delete" do
   @album = Album.find(params[:id])
-  if 0 == @album.all_editions.count()
     @album.delete()
     erb(:"albums/destroy")
-  else
-    @editions = @album.all_editions()
-    erb(:"albums/not-delete")
-  end
 end

@@ -1,11 +1,14 @@
 <h1>Album Deletion Warning!</h1>
 
-<h2 class="viewheading"><%= @album.title() %> still has editions in the database!</h2>
-
+<h2 class="viewheading">All of the below information about <%= @album.title() %>will be deleted from the database!</h2>
+<hr>
 <% @editions.each do |edition| %>
 
-<h3 class="data-row"> <%= edition.edition_release_year %> release on <%= edition.format %> </h3><a class="edit-link" href="/editions/<%= edition.id%>/edit">EDIT</a> <form class="delete-form" action="/editions/<%= edition.id %>/delete" method="POST"><input type="submit" class="delete-link" value="DELETE"></form>
+<h3 class="data-row"> <%= edition.edition_release_year %> release on <%= edition.format %> </h3>
 <p><%= edition.version_notes %> - Supplier Price: £<%= sprintf( '%.2f', (edition.supplier_price)/100) %> - Retail Price: £<%= sprintf( '%.2f', (edition.retail_price)/100) %></p>
 <p class="stocklevel"> - <%= edition.number_in_stock %> in stock</p>
 <hr>
 <% end %>
+
+<form class="delete-form" action="/albums/<%= @album.id %>/delete" method="POST">
+  <input type="submit" class="delete-link" value="CONFIRM DELETION"></form>
