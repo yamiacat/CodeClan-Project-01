@@ -24,10 +24,15 @@ artist4 = Artist.new({
   'name' => 'My Bloody Valentine'
   })
 
+artist5 = Artist.new({
+  'name' => 'Iron Maiden'
+  })
+
 artist1.save()
 artist2.save()
 artist3.save()
 artist4.save()
+artist5.save()
 
 album1 = Album.new({
   'artist_id' => artist1.id,
@@ -86,6 +91,14 @@ album8 = Album.new({
   'original_release_year' => '2013'
   })
 
+
+album9 = Album.new({
+  'artist_id' => artist3.id,
+  'title' => 'Somewhere in Time',
+  'genre' => 'Heavy Metal',
+  'original_release_year' => '1986'
+  })
+
 album1.save()
 album2.save()
 album3.save()
@@ -94,6 +107,7 @@ album5.save()
 album6.save()
 album7.save()
 album8.save()
+album9.save()
 
 edition1 = Edition.new({
   'title_id' => album1.id,
@@ -247,6 +261,16 @@ edition15 = Edition.new({
   'retail_price' => '2400'
   })
 
+  edition16 = Edition.new({
+    'title_id' => album9.id,
+    'format' => 'cd',
+    'version_notes' => 'remastered',
+    'edition_release_year' => '1998',
+    'number_in_stock' => '0',
+    'supplier_price' => '900',
+    'retail_price' => '1100'
+    })
+
 
 edition1.save()
 edition2.save()
@@ -263,6 +287,7 @@ edition12.save()
 edition13.save()
 edition14.save()
 edition15.save()
+edition16.save()
 
 binding.pry
 nil
