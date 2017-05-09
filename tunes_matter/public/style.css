@@ -166,22 +166,29 @@ hr {
     background-size: contain;
 }
 
+.stocklevel {
+  font-weight: bold;
+}
+
 .collectible.stocklevel0 {
     color: lime;
     background-color: red;
     opacity: 0.8;
+    font-weight: bold;
 }
 
 .collectible.stocklevel1 {
     color: lime;
     background-color: firebrick;
     opacity: 0.8;
+    font-weight: bold;
 }
 
 .collectible.stocklevel2 {
     color: lime;
     background-color: chocolate;
     opacity: 0.8;
+    font-weight: bold;
 }
 
 

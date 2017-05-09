@@ -7,6 +7,6 @@
 
 <h3 class="data-row"> <%= edition.edition_release_year %> release on <%= edition.format %> </h3><a class="edit-link" href="/editions/<%= edition.id%>/edit">EDIT</a> <a class="delete-link" href="/editions/<%=edition.id%>/warn-delete">DELETE</a>
 <p><%= edition.version_notes %> - Supplier Price: £<%= sprintf( '%.2f', (edition.supplier_price)/100) %> - Retail Price: £<%= sprintf( '%.2f', (edition.retail_price)/100) %></p>
-<p class="stocklevel">Collectible? (<%= edition.collectible %>) - <%= edition.number_in_stock %> in stock</p>
+<p class="stocklevel"><%= "[COLLECTOR'S ITEM]" if edition.collectible == "y" %> - <%= edition.number_in_stock %> in stock</p>
 <hr>
 <% end %>

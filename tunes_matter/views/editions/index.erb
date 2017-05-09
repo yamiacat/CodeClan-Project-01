@@ -8,6 +8,6 @@
 
   <a class="edit-link" href="/editions/<%= edition.id%>/edit">EDIT</a> <a class="delete-link" href="/editions/<%=edition.id%>/warn-delete">DELETE</a>
 
-  <p class="stocklevel<%= edition.number_in_stock %> <%= "collectible" if edition.collectible == "n" %>">Collectible? (<%= edition.collectible %>) - <%= edition.number_in_stock %> in stock</p>
+  <p class="stocklevel<%= edition.number_in_stock %> <%= "collectible" if edition.collectible == "n" %>"><%= "[COLLECTOR'S ITEM]" if edition.collectible == "y" %> - <%= edition.number_in_stock %> in stock</p>
 <hr>
 <% end %>
