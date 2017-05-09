@@ -52,5 +52,10 @@ class Artist
     return returned_result.map {|album| Album.new(album)}
   end
 
+  def Artist.name_search(search_string)
+    sql = "SELECT * FROM artists WHERE name LIKE '%#{search_string}%';"
+    returned_result = SqlRunner.run(sql)
+    return returned_result.map{|artist| Artist.new(artist)}
+  end
 
 end

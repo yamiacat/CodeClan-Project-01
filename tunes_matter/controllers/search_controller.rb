@@ -11,7 +11,7 @@ get "/search" do
 end
 
 post "/search/artists" do
-  @artists = params['name']
+  @artists = Artist.name_search(params['name'])
   erb (:"artists/index")
 end
 
