@@ -21,7 +21,7 @@ post "/search/albums" do
 end
 
 post "/search/genres" do
-  @albums = params['genre']
+  @albums = Album.genre_search(params['genre'])
   erb (:"albums/index")
 end
 

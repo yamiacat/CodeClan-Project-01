@@ -67,4 +67,10 @@ class Album
   end
 
 
+  def Album.genre_search(search_string)
+    sql = "SELECT * FROM albums WHERE genre LIKE '%#{search_string}%';"
+    returned_result = SqlRunner.run(sql)
+    return returned_result.map{|album| Album.new(album)}
+  end
+
 end
