@@ -1,0 +1,12 @@
+<h1>Edition Deletion Warning!</h1>
+
+<h2 class="viewheading">All of the below information about <%= @edition.album.title() %>will be deleted from the database!</h2>
+<hr>
+
+<p class="data-row">"<%= @edition.album.title() %>" by <%= @edition.artist.name() %>  (<%= @edition.album.original_release_year %>): <%= @edition.edition_release_year %> edition on <%= @edition.format %> Supplier Price: £<%= sprintf( '%.2f', (@edition.supplier_price)/100) %> - Retail Price: £<%= sprintf( '%.2f', (@edition.retail_price)/100) %></p>
+
+<p class="stocklevel"> - <%= @edition.number_in_stock %> in stock</p>
+<hr>
+
+<form class="delete-form" action="/editions/<%= @edition.id %>/delete" method="POST">
+<input type="submit" class="delete-link" value="CONFIRM DELETION"></form>

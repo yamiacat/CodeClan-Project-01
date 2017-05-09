@@ -50,6 +50,13 @@ post "/editions/:id" do
   erb(:"editions/update")
 end
 
+#WARN DELETE
+
+get "/editions/:id/warn-delete" do
+  @edition = Edition.find(params[:id])
+  erb(:"editions/warn-delete")
+end
+
 #DESTROY DELETE
 
 post "/editions/:id/delete" do
