@@ -1,14 +1,6 @@
 <h1>Add New Edition</h1>
 
 <form action="/editions" method="POST">
-<!-- THIS BIT ISNT NEEDED, BUT SHOULDNT CAUSE PROBLEMS? -->
-  <label for="artist-select">Select Artist:</label>
-  <select id="artist-select" name="artist_id" required>
-    <option value ="">Please Select</option>
-    <% @artists.each do |artist| %>
-    <option value="<%= artist.id %>"> <%= artist.name %> </option>
-    <% end %>
-  </select>
 
   <label for="album-select">Select Album:</label>
   <select id="album-select" name="title_id" required>
@@ -32,14 +24,15 @@
     <option value ="n">No</option>
   </select>
 
+  <hr>
+
   <label for="version-notes-field">Version Notes:</label>
   <input class="update-field" id="version-notes-field" name="version_notes" type="text"/>
 
   <label for="edition-release-year-field">Edition Release Year:</label>
   <input class="update-field" id="edition-release-year-field" name="edition_release_year" type="number"/>
 
-  <label for="number-in-stock-field">Number in Stock:</label>
-  <input class="update-field" id="number-in-stock-field" name="number_in_stock" type="number"/>
+  <hr>
 
   <label for="supplier-price-field">Supplier Price:</label>
   <input class="update-field" id="supplier-price-field" name="supplier_price" type="number"/>
@@ -47,6 +40,13 @@
   <label for="retail-price-field">Retail Price:</label>
   <input class="update-field" id="retail-price-field" name="retail_price" type="number"/>
 
-  <input type="submit" value="Add to Editions">
+  <hr>
+
+  <label for="number-in-stock-field">Number in Stock:</label>
+  <input class="update-field" id="number-in-stock-field" name="number_in_stock" type="number"/>
+
+  <hr>
+
+  <input class="input-button" type="submit" value="Add to Editions">
 
 </form>

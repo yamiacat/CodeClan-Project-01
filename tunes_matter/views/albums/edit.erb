@@ -2,25 +2,28 @@
 
 <form action="/albums/<%= @album.id %>" method="POST">
 
-    <label for="artist-confirm">Confirm Artist:</label>
-    <select id="artist-confirm" name="artist_id">
+  <label for="artist-confirm">Confirm Artist:</label>
+  <select id="artist-confirm" name="artist_id">
 
-      <% @artists.each do |artist| %>
-      <option <%= "selected" if @album.artist.name == artist.name %> value="<%= artist.id %>"> <%= artist.name %> </option>
-      <% end %>
-    </select>
-
-
-      <label for="title-field">Album title:</label>
-      <input class="update-field" id="title-field" name="title" type="text" value="<%= @album.title %>"/>
+    <% @artists.each do |artist| %>
+    <option <%= "selected" if @album.artist.name == artist.name %> value="<%= artist.id %>"> <%= artist.name %> </option>
+    <% end %>
+  </select>
 
 
-    <label for="genre-field">Album Genre:</label>
-    <input class="update-field" id="genre-field" name="genre" type="text" value="<%= @album.genre %>"/>
+  <label for="title-field">Album title:</label>
+  <input class="update-field" id="title-field" name="title" type="text" value="<%= @album.title %>"/>
 
-    <label for="original-release-year-field">Original Release Year:</label>
-    <input class="update-field" id="original-release-year-field" name="original_release_year" type="number" value="<%= @album.original_release_year %>"/>
+  <hr>
 
-  <input type="submit" value="Update Album Details">
+  <label for="genre-field">Album Genre:</label>
+  <input class="update-field" id="genre-field" name="genre" type="text" value="<%= @album.genre %>"/>
+
+  <label for="original-release-year-field">Original Release Year:</label>
+  <input class="update-field" id="original-release-year-field" name="original_release_year" type="number" value="<%= @album.original_release_year %>"/>
+
+  <hr>
+
+  <input class="input-button" type="submit" value="Update Album Details">
 
 </form>
