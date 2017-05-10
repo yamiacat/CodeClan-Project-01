@@ -2,7 +2,7 @@
 
 <form action="/albums" method="POST">
 
-  <label for="artist-select">Select Artist:</label>
+  <label class="album-label" for="artist-select">Select Artist:</label>
   <select id="artist-select" name="artist_id" required>
     <option value ="">Please Select</option>
     <% @artists.each do |artist| %>
@@ -11,15 +11,19 @@
     <% end %>
   </select>
 
-  <label for="title-field">Album Title:</label>
+<hr>
+
+  <label class="album-label" for="title-field">Album Title:</label>
   <input class="update-field" id="title-field" name="title" type="text"/>
 
 <hr>
 
-  <label for="genre-field">Album Genre:</label>
+  <label class="album-label" for="genre-field">Album Genre:</label>
   <input class="update-field" id="genre-field" name="genre" type="text"/>
 
-  <label for="original-release-year-field">Original Release Year:</label>
+<hr>
+
+  <label class="album-label" for="original-release-year-field">Original Release Year:</label>
   <input class="update-field" id="original-release-year-field" name="original_release_year" type="number"/>
 
 <hr>

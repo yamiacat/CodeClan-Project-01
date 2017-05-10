@@ -2,7 +2,7 @@
 
 <form action="/albums/<%= @album.id %>" method="POST">
 
-  <label for="artist-confirm">Confirm Artist:</label>
+  <label class="album-label" for="artist-confirm">Confirm Artist:</label>
   <select id="artist-confirm" name="artist_id">
 
     <% @artists.each do |artist| %>
@@ -10,16 +10,19 @@
     <% end %>
   </select>
 
+  <hr>
 
-  <label for="title-field">Album title:</label>
+  <label class="album-label" for="title-field">Album title:</label>
   <input class="update-field" id="title-field" name="title" type="text" value="<%= @album.title %>"/>
 
   <hr>
 
-  <label for="genre-field">Album Genre:</label>
+  <label class="album-label" for="genre-field">Album Genre:</label>
   <input class="update-field" id="genre-field" name="genre" type="text" value="<%= @album.genre %>"/>
 
-  <label for="original-release-year-field">Original Release Year:</label>
+  <hr>
+
+  <label class="album-label" for="original-release-year-field">Original Release Year:</label>
   <input class="update-field" id="original-release-year-field" name="original_release_year" type="number" value="<%= @album.original_release_year %>"/>
 
   <hr>

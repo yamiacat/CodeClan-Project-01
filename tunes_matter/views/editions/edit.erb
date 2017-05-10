@@ -2,7 +2,7 @@
 
 <form action="/editions/<%= @edition.id %>" method="POST">
 
-  <label for="album-confirm">Confirm Album:</label>
+  <label class="edition-label" for="album-confirm">Confirm Album:</label>
   <select id="album-confirm" name="title_id" required>
 
     <% @albums.each do |album| %>
@@ -10,15 +10,17 @@
     <% end %>
   </select>
 
-  <label for="format-confirm">Confirm Format:</label>
+  <hr>
+
+  <label class="edition-label" for="format-confirm">Confirm Format:</label>
   <select id="format-confirm" name="format" required>
     <option <%= "selected" if @edition.format == "cd" %> value ="cd">CD</option>
     <option <%= "selected" if @edition.format == "vinyl" %> value ="vinyl">Vinyl</option>
   </select>
 
+  <hr>
 
-
-  <label for="collectible-confirm">Collector's Edition?</label>
+  <label class="edition-label" for="collectible-confirm">Collector's Edition?</label>
   <select id="collectible-confirm" name="collectible" required>
     <option <%= "selected" if @edition.collectible == "y" %> value ="y">Yes</option>
     <option <%= "selected" if @edition.collectible == "n" %> value ="n">No</option>
@@ -26,26 +28,30 @@
 
   <hr>
 
-  <label for="version-notes-field">Version Notes:</label>
+  <label class="edition-label" for="version-notes-field">Version Notes:</label>
   <input class="update-field" id="version-notes-field" name="version_notes" type="text" value="<%= @edition.version_notes %>"/>
 
-  <label for="edition-release-year-field">Edition Release Year:</label>
+  <hr>
+
+  <label class="edition-label" for="edition-release-year-field">Edition Release Year:</label>
   <input class="update-field" id="edition-release-year-field" name="edition_release_year" type="number" value="<%= @edition.edition_release_year %>"/>
 
-<hr>
+  <hr>
 
-  <label for="supplier-price-field">Supplier Price:</label>
+  <label class="edition-label" for="supplier-price-field">Supplier Price:</label>
   <input class="update-field" id="supplier-price-field" name="supplier_price" type="number" value="<%= @edition.supplier_price %>"/>
 
-  <label for="retail-price-field">Retail Price:</label>
+  <hr>
+
+  <label class="edition-label" for="retail-price-field">Retail Price:</label>
   <input class="update-field" id="retail-price-field" name="retail_price" type="number" value="<%= @edition.retail_price %>"/>
 
-<hr>
+  <hr>
 
-  <label for="number-in-stock-field">Number in Stock:</label>
+  <label class="edition-label" for="number-in-stock-field">Number in Stock:</label>
   <input class="update-field" id="number-in-stock-field" name="number_in_stock" type="number" value="<%= @edition.number_in_stock %>"/>
 
-<hr>
+  <hr>
 
   <input class="input-button" type="submit" value="Add to Editions">
 

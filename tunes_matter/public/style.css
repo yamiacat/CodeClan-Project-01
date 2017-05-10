@@ -117,9 +117,22 @@ input.input-button {
 
 label.search-label {
   display: inline-block;
-  width: 150px;
+  width: 10em;
   text-align: right;
 }
+
+label.album-label {
+  display: inline-block;
+  width: 14em;
+  text-align: right;
+}
+
+label.edition-label {
+  display: inline-block;
+  width: 14em;
+  text-align: right;
+}
+
 
 .delete-link {
   color: crimson;
