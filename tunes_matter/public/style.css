@@ -115,6 +115,11 @@ input.input-button {
   color: cyan;
 }
 
+label.search-label {
+  display: inline-block;
+  width: 150px;
+  text-align: right;
+}
 
 .delete-link {
   color: crimson;
