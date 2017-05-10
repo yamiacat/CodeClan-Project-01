@@ -12,14 +12,14 @@
 
 
       <label for="title-field">Album title:</label>
-      <input id="title-field" name="title" type="text" value="<%= @album.title %>"/>
+      <input class="update-field" id="title-field" name="title" type="text" value="<%= @album.title %>"/>
 
 
     <label for="genre-field">Album Genre:</label>
-    <input id="genre-field" name="genre" type="text" value="<%= @album.genre %>"/>
+    <input class="update-field" id="genre-field" name="genre" type="text" value="<%= @album.genre %>"/>
 
     <label for="original-release-year-field">Original Release Year:</label>
-    <input id="original-release-year-field" name="original_release_year" type="number" value="<%= @album.original_release_year %>"/>
+    <input class="update-field" id="original-release-year-field" name="original_release_year" type="number" value="<%= @album.original_release_year %>"/>
 
   <input type="submit" value="Update Album Details">
 

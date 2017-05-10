@@ -84,6 +84,7 @@ input.delete-link {
 }
 
 input.update-field {
+  text-transform: capitalize;
   /*display: inline;
   flex-direction: row;
   justify-content: flex-end;*/
@@ -91,8 +92,7 @@ input.update-field {
   /*border: solid 2px green;*/
   border-radius: 5px;
   /*padding: 1px 5px;*/
-  box-shadow: 0px 5px 2px 5px green inset;
-
+  box-shadow: 0px 0px 10px 5px green inset;
   font: inherit;
   color: lime;
 }
