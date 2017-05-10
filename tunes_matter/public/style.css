@@ -97,6 +97,16 @@ input.update-field {
   color: lime;
 }
 
+select {
+  text-transform: capitalize;
+  background: none;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px 5px green inset;
+  font: inherit;
+  color: lime;
+}
+
+
 
 .delete-link {
   color: crimson;
