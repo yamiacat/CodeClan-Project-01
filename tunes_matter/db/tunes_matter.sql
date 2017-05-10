@@ -24,5 +24,6 @@ CREATE TABLE editions (
   edition_release_year INT4,
   number_in_stock INT4,
   supplier_price INT4,
-  retail_price INT4
+  retail_price INT4,
+  markup INT4
 );

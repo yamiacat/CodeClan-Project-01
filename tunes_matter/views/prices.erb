@@ -1,0 +1,13 @@
+<h1>Markup View</h1>
+
+<hr/>
+
+<% @editions.each do |edition| %>
+
+<p class="data-row">"<%= edition.album.title() %>" by <%= edition.artist.name() %>: <%= edition.edition_release_year %> edition on <%= edition.format %> Supplier Price: £<%= sprintf( '%.2f', (edition.supplier_price)/100) %> - Retail Price: £<%= sprintf( '%.2f', (edition.retail_price)/100) %></p>
+
+  <a class="edit-link" href="/editions/<%= edition.id%>/edit">EDIT</a> <a class="delete-link" href="/editions/<%=edition.id%>/warn-delete">DELETE</a>
+
+  <p class="stocklevel"><%= "[COLLECTOR'S ITEM]" if edition.collectible == "y" %> - <%= edition.number_in_stock %> in stock - Profit: £<%= sprintf( '%.2f', (edition.markup)/100) %> - Markup: <%= sprintf('%.2f', (edition.markup.to_f / edition.retail_price)*100) %> % </p>
+<hr>
+<% end %>

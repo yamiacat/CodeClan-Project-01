@@ -4,7 +4,7 @@ require_relative("./artist.rb")
 
 class Edition
 
-  attr_reader :id
+  attr_reader :id, :markup
   attr_accessor :title_id, :format, :version_notes, :collectible, :edition_release_year, :number_in_stock, :supplier_price, :retail_price
 
   def initialize(params)
@@ -17,10 +17,11 @@ class Edition
     @number_in_stock = params['number_in_stock'].to_i()
     @supplier_price = params['supplier_price'].to_i()
     @retail_price = params['retail_price'].to_i
+    @markup = (@retail_price - @supplier_price).to_i
   end
 
   def save()
-    sql = "INSERT INTO editions (title_id, format, version_notes, collectible, edition_release_year, number_in_stock, supplier_price, retail_price) VALUES (#{@title_id}, '#{@format}', '#{@version_notes}', '#{@collectible}', #{@edition_release_year}, #{@number_in_stock}, #{@supplier_price}, #{@retail_price}) RETURNING id;"
+    sql = "INSERT INTO editions (title_id, format, version_notes, collectible, edition_release_year, number_in_stock, supplier_price, retail_price, markup) VALUES (#{@title_id}, '#{@format}', '#{@version_notes}', '#{@collectible}', #{@edition_release_year}, #{@number_in_stock}, #{@supplier_price}, #{@retail_price}, #{@markup}) RETURNING id;"
     returned_result = SqlRunner.run(sql)
     @id = returned_result.first()['id'].to_i()
   end
@@ -38,6 +39,12 @@ class Edition
 
   def Edition.all()
     sql = "SELECT * FROM editions ORDER BY collectible, number_in_stock ASC;"
+    returned_result = SqlRunner.run(sql)
+    return returned_result.map{|edition| Edition.new(edition)}
+  end
+
+  def Edition.markup()
+    sql = "SELECT * FROM editions ORDER BY markup ASC;"
     returned_result = SqlRunner.run(sql)
     return returned_result.map{|edition| Edition.new(edition)}
   end
